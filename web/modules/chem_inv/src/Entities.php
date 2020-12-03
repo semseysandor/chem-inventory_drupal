@@ -9,12 +9,14 @@ use Drupal\Core\Database\Connection;
  */
 class Entities {
 
+    public const COMPOUNDS_TABLE='chem_inv_compounds';
+
   /**
    * The database connection.
    *
    * @var \Drupal\Core\Database\Connection
    */
-  protected $connection;
+  protected Connection $connection;
 
   /**
    * Constructs an Entities object.
@@ -30,7 +32,20 @@ class Entities {
    * Method description.
    */
   public function doSomething() {
-    // @DCG place your code here.
+    return 'kutyamajom';
   }
 
+    public function getAllCompounds()
+    {
+        return $this->connection->select(self::COMPOUNDS_TABLE,'c')->fields('c')->execute()->fetchAllAssoc('id');
+  }
+
+    public function addCompound(array $fields_values)
+    {
+        $query = $this->connection->insert(self::COMPOUNDS_TABLE);
+        $query->fields($fields_values)->execute();
+//        $this->messenger()->addStatus(
+//            $this->t('The message has been sent.')
+//        );
+  }
 }

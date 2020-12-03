@@ -5,19 +5,20 @@
  * Install, update and uninstall functions for the Chem Inv module.
  */
 
+use Drupal\chem_inv\Entities;
+
 /**
  * Implements hook_schema().
  */
 function chem_inv_schema() {
-  $schema['chem_inv_compounds'] = [
+  $schema[Entities::COMPOUNDS_TABLE] = [
     'description' => 'Compounds',
     'fields' => [
       'id' => [
         'description' => 'Compound ID.',
-        'type' => 'int',
+        'type' => 'serial',
         'unsigned' => TRUE,
         'not null' => TRUE,
-        'default' => 0,
       ],
       'name' => [
         'description' => 'Compound name',
