@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Chem Inv module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function chem_inv_schema() {
+  $schema['chem_inv_compounds'] = [
+    'description' => 'Compounds',
+    'fields' => [
+      'id' => [
+        'description' => 'Compound ID.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'name' => [
+        'description' => 'Compound name',
+        'type' => 'varchar_ascii',
+        'length' => DRUPAL_EXTENSION_NAME_MAX_LENGTH,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'cas' => [
+        'description' => 'CAS number',
+        'type' => 'varchar_ascii',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $schema;
+}
