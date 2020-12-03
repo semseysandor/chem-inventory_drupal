@@ -1,0 +1,7 @@
+chem_inv.compound:
+  path: '/chem-inv/compound'
+  defaults:
+    _title: 'Compound'
+    _form: 'Drupal\chem_inv\Form\Compound'
+  requirements:
+    _permission: 'access content'
