@@ -1,0 +1,4 @@
+services:
+  cheminv.entities:
+    class: Drupal\chem_inv\Entities
+    arguments: ['@database']
