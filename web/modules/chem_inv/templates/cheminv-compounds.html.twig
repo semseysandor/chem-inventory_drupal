@@ -1,0 +1,23 @@
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>CAS #</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in compounds %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.cas }}</td>
+        </tr>
+    {% else %}
+        <marquee>
+            There are no compounds in the database.
+        </marquee>
+    {% endfor %}
+    </tbody>
+</table>
+

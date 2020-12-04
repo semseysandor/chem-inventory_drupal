@@ -20,22 +20,19 @@ class MainMenuBlock extends BlockBase
      */
     public function build()
     {
-
-        $build['examples_link'] = [
+        $build['all compounds'] = [
             '#title' => $this
-                ->t('Inventory'),
+                ->t('Compounds'),
             '#type' => 'link',
-            '#url' => \Drupal\Core\Url::fromRoute('chem_inv.compound'),
+            '#url' => \Drupal\Core\Url::fromRoute('chem_inv.compounds'),
         ];
-
-        $build['examples_link'] = [
+        $build['compound'] = [
             '#title' => $this
-                ->t('Inventory'),
+                ->t('Add compound'),
             '#type' => 'link',
             '#url' => \Drupal\Core\Url::fromRoute('chem_inv.compound'),
         ];
 
         return $build;
     }
-
 }
